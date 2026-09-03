@@ -2,6 +2,8 @@
 
 Reusable agent skills for managing [Dooplex](https://dooplex.ai) creator accounts.
 
+[![skills.sh](https://skills.sh/b/dooplex-ai/skills)](https://skills.sh/dooplex-ai/skills)
+
 ## Available skills
 
 | Skill | Description |
