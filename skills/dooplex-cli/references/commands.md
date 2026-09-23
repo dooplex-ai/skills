@@ -126,8 +126,8 @@ npx @dooplex/cli prompt-rollback jane-doe <versionId> --json
 
 ## Knowledge (Q&A library) — no role gate beyond membership
 
-Unlike prompt and public-page edits, knowledge edits have no owner-only gate: any
-creator team member, including an `operator`, can edit them.
+Unlike prompt/public-page edits, these mirror `app/actions/knowledge.ts`, which has
+no owner-only gate: any creator_users member (including `operator`) can edit.
 
 ### `knowledge-list <slug>`
 
@@ -424,8 +424,8 @@ would silently skip or repeat turns.
 
 `--session-only` limits the read to the fan's current session.
 
-`profile.facts` comes back as parsed JSON (or `null`), never as a string to decode a
-second time.
+`profile` is the agent's memory notes about the fan (`text`, markdown) with the
+`updatedAt` of the last memory write, or `null` when the agent has saved nothing yet.
 
 **An unreadable transcript is a `503`, not an empty list.** If the transcript store
 cannot be reached (a missing internal secret, a failed internal call), the response
