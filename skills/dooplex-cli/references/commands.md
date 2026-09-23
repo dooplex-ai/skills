@@ -22,6 +22,17 @@ Show the active origin, token id, and expiry (or that it came from `DOOPLEX_CLI_
 
 Delete the saved token for the current origin.
 
+### `self-update`
+
+Standalone binary: downloads the latest release for this OS/CPU, verifies its
+SHA-256 and replaces the executable in place. npm install: prints
+`npm install -g @dooplex/cli@latest` and changes nothing.
+
+```bash
+npx @dooplex/cli self-update --json
+# → {"ok":true,"action":"self-update","dist":"npm","command":"npm install -g @dooplex/cli@latest"}
+```
+
 ## Reading (needs only membership)
 
 ### `list`

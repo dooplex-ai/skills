@@ -26,7 +26,10 @@ directly, and every operation goes through the same access checks the web consol
 uses, so it can only reach creators the signed-in user already has access to.
 
 **Prerequisite:** Node.js ≥ 20. No install step — invoke with `npx @dooplex/cli`
-(or `npm i -g @dooplex/cli` for a shorter `dooplex` command).
+(or `npm i -g @dooplex/cli` for a shorter `dooplex` command). Without Node, a
+standalone binary installs with `curl -fsSL https://dooplex.ai/cli/install.sh | sh`
+and updates with `dooplex self-update`. A once-a-day stderr notice mentions a newer
+version; it never appears in `--json` output, and `DOOPLEX_NO_UPDATE_CHECK=1` disables it.
 
 ## 1. Authenticate (once)
 
@@ -35,7 +38,9 @@ npx @dooplex/cli login
 ```
 
 This opens a browser to approve the CLI (OAuth loopback + PKCE), then saves a
-long-lived bearer token to `~/.dooplex/credentials.json` (chmod `0600`). Verify and
+long-lived bearer token to `~/.dooplex/credentials.json` (chmod `0600`). In an SSH
+session no browser is opened: the CLI prints the link to open on your own computer,
+and the approval page shows a code to paste back into the terminal. Verify and
 manage the session:
 
 ```bash
